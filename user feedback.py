@@ -10,11 +10,10 @@ def send_email(recipient, subject, body):
     msg['From'] = sender
     msg['To'] = recipient
 
-    # Send email through SMTP server
-    with smtplib.SMTP_SSL('smtp.example.com', 465) as server:
+ with smtplib.SMTP_SSL('smtp.example.com', 465) as server:
         server.login(sender, password)
         server.sendmail(sender, recipient, msg.as_string())
         print("Email sent successfully.")
 
-# Example usage
 send_email('applicant@example.com', 'Loan Approval Status', 'Your loan application has been approved!')
+
